@@ -1,15 +1,15 @@
 // DOM selectors
+var taskIdCounter = 0;
+
 var formEl = document.querySelector("#task-form");
 
 var tasksToDoEl = document.querySelector("#tasks-to-do");
 
-var taskIdCounter = 0;
-
-var pageContentEl = document.querySelector("#page-content");
-
 var tasksInProgressEl = document.querySelector("#tasks-in-progress");
 
 var tasksCompletedEl = document.querySelector("#tasks-completed");
+
+var pageContentEl = document.querySelector("#page-content");
 
 
 //  functions
@@ -39,11 +39,11 @@ var taskFormHandler = function(event) {
         var taskDataObj = {
         name: taskNameInput,
         type: taskTypeInput
-      }
-    };
+      };
+      createTaskEl(taskDataObj);
+    }
 
     // send it as an argument to createTaskEl
-    createTaskEl(taskDataObj);
     formEl.reset();
 };
 
